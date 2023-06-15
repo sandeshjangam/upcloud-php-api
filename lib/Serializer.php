@@ -25,12 +25,12 @@ class Serializer implements SerializerInterface
         $this->serializer = new BaseSerializer([$normalizer], [new JsonEncoder()]);
     }
 
-    public function deserialize(mixed $data, string $type, string $format, array $context = []): string
+    public function deserialize(mixed $data, string $type, string $format = 'json', array $context = []): string
     {
         return $this->serializer->deserialize($data, $type, $format, $context);
     }
 
-    public function serialize(mixed $data, string $format, array $context = []): string
+    public function serialize(mixed $data, string $format = 'json', array $context = []): string
     {
         return $this->serializer->serialize($data, $format, array_merge([
             'json_encode_options' => self::DEFAULT_ENCODING_OPTIONS,
