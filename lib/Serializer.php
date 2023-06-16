@@ -25,7 +25,7 @@ class Serializer implements SerializerInterface
         $this->serializer = new BaseSerializer([$normalizer], [new JsonEncoder()]);
     }
 
-    public function deserialize(mixed $data, string $type, string $format = 'json', array $context = []): string
+    public function deserialize(mixed $data, string $type, string $format = 'json', array $context = []): object|array
     {
         return $this->serializer->deserialize($data, $type, $format, $context);
     }

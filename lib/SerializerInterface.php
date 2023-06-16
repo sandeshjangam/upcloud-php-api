@@ -29,5 +29,5 @@ interface SerializerInterface extends BaseSerializerInterface
      * @param array $context
      * @return object|array
      */
-    public function deserialize(mixed $data, string $type, string $format, array $context = []): string;
+    public function deserialize(mixed $data, string $type, string $format, array $context = []): object|array;
 }
